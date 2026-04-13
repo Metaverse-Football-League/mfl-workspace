@@ -39,6 +39,27 @@ for repo in "${REPOS[@]}"; do
   fi
 done
 
+# Make general-purpose skills available globally
+SKILLS_DIR="$HOME/.claude/skills"
+mkdir -p "$SKILLS_DIR"
+
+declare -A SKILL_SOURCES=(
+  [commit]="$WORKSPACE_DIR/.claude/skills/commit"
+  [agent-browser]="$WORKSPACE_DIR/.claude/skills/agent-browser"
+  [email]="$WORKSPACE_DIR/mfl-creators/.claude/skills/email"
+  [project-create]="$WORKSPACE_DIR/.claude/skills/project-create"
+)
+
+for skill in "${!SKILL_SOURCES[@]}"; do
+  target="$SKILLS_DIR/$skill"
+  if [ ! -e "$target" ] && [ ! -L "$target" ]; then
+    ln -s "${SKILL_SOURCES[$skill]}" "$target"
+    echo "[ok] $skill skill — symlinked to global"
+  else
+    echo "[ok] $skill skill — already available globally"
+  fi
+done
+
 echo ""
 echo "Done. Navigate to a repo and start working:"
 echo "  cd mfl-marketing && claude"

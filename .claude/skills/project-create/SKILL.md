@@ -38,7 +38,7 @@ Example: `/project-create marketing world-cup-campaign`
      | **Status** | Active |
      ```
 7. **Add entry to `PROJECTS.md`** in the workspace root — append row to the table (use `mfl-{domain}` as the Repo column)
-8. **Commit** with message: `{domain}: Create {project-name} project`
+8. **Do Not Commit** User will manually commit when he wants to.
 
 ## Rules
 
