@@ -1,0 +1,8 @@
+# Sub-repos are independent — managed by setup.sh
+/mfl-wiki/
+/mfl-confidential/
+/mfl-marketing/
+/mfl-product/
+/mfl-tech/
+/mfl-data/
+/mfl-creators/
