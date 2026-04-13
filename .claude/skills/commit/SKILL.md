@@ -15,7 +15,7 @@ Stage all changes, generate a well-formatted commit message, commit, and push �
 ## Invocation
 
 - `/commit` — stage session files, commit with auto-generated message, and push
-- `/commit --all` — stage ALL dirty files (not just session), commit, and push
+- `/commit --all` — stage ALL dirty files (not just session), commit, and push. **In workspace root**: also iterates through all sub-repo folders and commits their changes individually.
 - `/commit -m "message"` — use the provided message instead of auto-generating
 - `/commit --no-push` — commit only, skip pushing
 - "commit and push" / "commit & push" / "commit this" / "push it"
@@ -102,10 +102,47 @@ Stage all changes, generate a well-formatted commit message, commit, and push �
 
 18. If push fails (e.g., rejected because remote is ahead), report the error. Do NOT force push. Suggest `git pull --rebase` instead.
 
+### Phase 5b: Sub-repo Commits (workspace `--all` only)
+
+This phase runs **only** when `--all` is passed **and** the current working directory is the workspace root (`mfl-workspace/`).
+
+19. **Discover sub-repos**: List all immediate child directories that contain a `.git` folder. These are independent repos (e.g., `mfl-wiki/`, `mfl-marketing/`, `mfl-creators/`).
+
+20. **For each sub-repo with dirty changes**, repeat Phases 1–5 scoped to that repo:
+    a. `cd` into the sub-repo and run `git status` / `git diff`.
+    b. If the working tree is clean, skip it silently.
+    c. Run all safety checks (Phase 2) — same rules apply.
+    d. Auto-generate a commit message using the same domain detection logic (Phase 3), but scoped to that repo's changes.
+    e. Stage files with specific paths (Phase 4) — never `git add -A` or `git add .`.
+    f. Commit with HEREDOC + co-author line.
+    g. Push (Phase 5) unless `--no-push` was passed.
+
+21. **Important constraints for sub-repo commits**:
+    - Each sub-repo gets its own independent commit with its own message.
+    - Never combine changes from multiple sub-repos into one commit.
+    - If a sub-repo commit or push fails, report the error for that repo and continue to the next. Don't abort the whole run.
+    - The workspace root is always committed first, then sub-repos in alphabetical order.
+
 ### Phase 6: Summary
 
-19. Print a clean summary:
+22. Print a clean summary. For workspace `--all` runs, list each repo that was committed:
 
+```
+Committed and pushed.
+
+  mfl-workspace/
+    [short-hash] [commit message first line]
+    Branch: [branch-name] · Files: [N] changed · Pushed
+
+  mfl-creators/
+    [short-hash] [commit message first line]
+    Branch: [branch-name] · Files: [N] changed · Pushed
+
+  mfl-wiki/
+    (clean — nothing to commit)
+```
+
+For single-repo commits (no sub-repo phase):
 ```
 Committed and pushed.
 
