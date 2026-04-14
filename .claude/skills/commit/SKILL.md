@@ -175,4 +175,4 @@ Committed (not pushed).
 - This skill **never** uses `git add -A`, `git add .`, `--force`, `--no-verify`, or `--amend`.
 - The co-author line is always appended. It cannot be disabled.
 - This skill does not create branches. Use `git checkout -b` separately if needed.
-- For KB changes that should go through PR review, use `/kb-update` instead.
+- For KB changes that should go through PR review, use `/wiki-update` instead.
