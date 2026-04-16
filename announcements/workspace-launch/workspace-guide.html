@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>MFL Workspace — Team Guide</title>
+<style>
+  :root {
+    --navy: #0b1f3a;
+    --green: #00c46a;
+    --green-dark: #008f4e;
+    --grey-bg: #f4f6f8;
+    --grey-line: #e2e6ea;
+    --text: #1a2330;
+    --muted: #5b6772;
+  }
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    font-size: 11pt;
+    line-height: 1.55;
+    background: #fff;
+  }
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 28px;
+  }
+  header.cover {
+    border-top: 6px solid var(--green);
+    background: var(--navy);
+    color: #fff;
+    padding: 36px 32px 30px;
+    border-radius: 8px;
+    margin-bottom: 28px;
+  }
+  header.cover .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10pt;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  header.cover h1 {
+    margin: 0 0 8px;
+    font-size: 28pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  header.cover p {
+    margin: 0;
+    font-size: 12pt;
+    color: #c9d3e0;
+    max-width: 600px;
+  }
+  h2 {
+    font-size: 16pt;
+    color: var(--navy);
+    margin: 32px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--green);
+    display: inline-block;
+    padding-right: 14px;
+  }
+  h3 {
+    font-size: 12pt;
+    color: var(--navy);
+    margin: 20px 0 6px;
+    font-weight: 600;
+  }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  code, pre {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 9.5pt;
+  }
+  code {
+    background: var(--grey-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--navy);
+  }
+  pre {
+    background: var(--navy);
+    color: #e6edf3;
+    padding: 14px 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+  pre code { background: transparent; color: inherit; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 10pt;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--grey-line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--grey-bg);
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .callout {
+    background: #e8f9f0;
+    border-left: 4px solid var(--green);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.warn {
+    background: #fff6e5;
+    border-left-color: #e6a700;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .card {
+    background: var(--grey-bg);
+    border: 1px solid var(--grey-line);
+    padding: 14px 14px;
+    border-radius: 6px;
+  }
+  .card h4 {
+    margin: 0 0 6px;
+    font-size: 10.5pt;
+    color: var(--navy);
+  }
+  .card p { margin: 0; font-size: 9.5pt; color: var(--muted); }
+  .tag {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-size: 8pt;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .tag.muted { background: var(--muted); }
+  footer {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid var(--grey-line);
+    font-size: 9pt;
+    color: var(--muted);
+    text-align: center;
+  }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="eyebrow">Team Guide · April 2026</div>
+    <h1>MFL Workspace</h1>
+    <p>The new umbrella home for every MFL repo — shared context, unified Claude Code setup, and the central knowledge system. This guide replaces <code style="background:#1e3358;color:#fff;">mfl-knowledge-base</code>.</p>
+  </header>
+
+  <h2>Why this change</h2>
+  <p>As MFL grows, our docs, projects, and tooling have spread across multiple repos and tools. <code>mfl-knowledge-base</code> was a single-purpose wiki; it no longer fits the way we actually work — multiple teams, multiple projects, and AI agents that need consistent context across all of them.</p>
+  <p><strong><code>mfl-workspace</code> replaces it.</strong> It's an umbrella repo that sits at <code>~/mfl-workspace/</code> and holds every domain-specific repo as a sibling folder. Claude Code automatically loads the shared workspace context on top of each repo's own instructions — so every agent across the company shares the same red lines, terminology, and conventions without anyone having to configure it.</p>
+
+  <h2>Workspace structure</h2>
+  <p>The workspace is a flat collection of independent Git repos, each owned by a team or function. Every repo carries its own <code>CLAUDE.md</code>; the workspace-level <code>CLAUDE.md</code> cascades down to all of them.</p>
+
+  <table>
+    <thead>
+      <tr><th>Repo</th><th>What it contains</th><th>Access</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>mfl-workspace</code></td><td>Umbrella — shared context, setup, universal skills</td><td>All employees</td></tr>
+      <tr><td><code>mfl-wiki</code></td><td>Knowledge system — KB, memory, sources</td><td>All employees</td></tr>
+      <tr><td><code>mfl-confidential</code></td><td>Finance, legal, projections</td><td>Restricted</td></tr>
+      <tr><td><code>mfl-creators</code></td><td>Creator CRM — profiles, outreach, contracts, audits</td><td>Creator / marketing team</td></tr>
+      <tr><td><code>mfl-marketing</code></td><td>Marketing projects — campaigns, promos, acquisition</td><td>Marketing team</td></tr>
+      <tr><td><code>mfl-product</code></td><td>Product projects — features, discovery, UX</td><td>Product team</td></tr>
+      <tr><td><code>mfl-tech</code></td><td>Tech projects — migrations, infra, integrations</td><td>Tech team</td></tr>
+      <tr><td><code>mfl-data</code></td><td>Data projects — analytics, cohorts, KPIs</td><td>Data team</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Important:</strong> all repos must live inside <code>~/mfl-workspace/</code> for the CLAUDE.md cascade and cross-repo references to work. Do not clone them elsewhere.
+  </div>
+
+  <h2>Getting started</h2>
+  <p>Three commands and you're set up:</p>
+  <pre><code>git clone https://github.com/Metaverse-Football-League/mfl-workspace.git ~/mfl-workspace
+cd ~/mfl-workspace
+./setup.sh</code></pre>
+  <p>The setup script clones every sub-repo you have access to and silently skips the ones you don't. It also symlinks general-purpose skills (<code>/commit</code>, <code>/project-create</code>, <code>/agent-browser</code>, <code>/email</code>) so they're available globally — in any repo, on any project.</p>
+  <p>From there, working is simple:</p>
+  <pre><code>cd mfl-marketing
+claude</code></pre>
+  <p>Claude Code auto-loads the workspace <code>CLAUDE.md</code> + the repo's own <code>CLAUDE.md</code>. No extra config.</p>
+
+  <div class="page-break"></div>
+
+  <h2>How Claude Code uses the workspace</h2>
+  <p>Two kinds of context are loaded automatically whenever you launch Claude inside a sub-repo:</p>
+  <ul>
+    <li><strong>Workspace-level</strong> (<code>~/mfl-workspace/CLAUDE.md</code>) — red lines (no "investment" framing, 18+ strict, no invented facts), critical terminology (club owner, player, $MFL, manager), and the repo catalog.</li>
+    <li><strong>Repo-level</strong> (<code>mfl-&lt;domain&gt;/CLAUDE.md</code>) — domain-specific conventions, data sources, workflows, and the skills available for that team.</li>
+  </ul>
+  <p>Cross-repo references in skills and docs use relative paths (e.g. <code>../mfl-wiki/knowledge-base/09-marketing/</code>), which is why all repos must sit side-by-side.</p>
+
+  <h2>Shared skills</h2>
+  <div class="grid-3">
+    <div class="card"><h4>/commit</h4><p>Stage, commit, and push in one step with a domain-aware message.</p></div>
+    <div class="card"><h4>/project-create</h4><p>Scaffold a new operational project in the right domain folder.</p></div>
+    <div class="card"><h4>/agent-browser</h4><p>Browser automation for AI agents — navigate, fill forms, scrape.</p></div>
+  </div>
+  <p>Domain-specific skills live in their own repo and load automatically when you <code>cd</code> into it — see <code>INDEX.md</code> for the full list per team.</p>
+
+  <h2>Focus on <code>mfl-wiki</code> <span class="tag">Core</span></h2>
+  <p><code>mfl-wiki</code> is the heart of our knowledge system. Everything we learn — from a user interview to a partnership deck to a tokenomics note — eventually lands here so that any team member (and any agent) can find it.</p>
+
+  <h3>Three-layer structure</h3>
+  <div class="grid-3">
+    <div class="card"><h4>knowledge-base/</h4><p>Curated, canonical pages organized by domain (e.g. <code>09-marketing/</code>, numbered to keep ordering stable). This is the trusted reference.</p></div>
+    <div class="card"><h4>sources/</h4><p>Raw imported material — interview transcripts, articles, internal docs, decks. Unedited, timestamped, attributed.</p></div>
+    <div class="card"><h4>memory/</h4><p>Long-term agent memory — stable facts, preferences, and context agents can draw on across sessions.</p></div>
+  </div>
+
+  <h3>How the wiki is fed</h3>
+  <p>Feeding the wiki is a deliberate, three-step flow so nothing leaks into the KB unchecked:</p>
+  <ol>
+    <li><strong><code>/source-import</code></strong> — pulls raw material into <code>sources/</code>. Any format: URLs, PDFs, transcripts, pasted text.</li>
+    <li><strong><code>/wiki-ingest</code></strong> — curates a source into the <code>knowledge-base/</code>: normalizes terminology, places it in the right domain, links related pages, drops anything off-brand or unverified.</li>
+    <li><strong><code>/wiki-update</code></strong> — evolves existing KB pages with new facts or corrections. Preserves history.</li>
+  </ol>
+  <p>A fourth skill, <strong><code>/wiki-recap</code></strong>, gives you a digest of what changed recently — useful for weekly reviews or catching up after time off.</p>
+
+  <div class="callout warn">
+    <strong>Red line:</strong> the wiki is the source of truth. If a claim isn't verifiable in <code>knowledge-base/</code> or traceable to a file in <code>sources/</code>, agents must flag it as unverified rather than invent. Accuracy first.
+  </div>
+
+  <h2>Red lines (always enforced)</h2>
+  <ul>
+    <li>Never position MFL as investment — no "you can make money" or "guaranteed returns." MFL is a game.</li>
+    <li>18+ restriction is strict — real-money economy requires it.</li>
+    <li>Don't overpromise features — only discuss what is officially announced.</li>
+    <li>Be careful with economic claims — verify against KB source files.</li>
+    <li>Never invent facts — accuracy first. If unsure, say so.</li>
+    <li>English only — all files, commit messages, and documentation must be in English.</li>
+  </ul>
+
+  <h2>Quick reference — terminology</h2>
+  <table>
+    <thead><tr><th>Use</th><th>Avoid</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Club owner</td><td>NFT holder</td><td>Football, not crypto</td></tr>
+      <tr><td>Player</td><td>Asset</td><td>Human, not transactional</td></tr>
+      <tr><td>$MFL</td><td>Tokens</td><td>Currency, not speculation</td></tr>
+      <tr><td>Manager</td><td>User</td><td>Role-play the fantasy</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Questions &amp; support</h2>
+  <p>Issue during setup, unclear red line, or a skill not behaving as expected? Ping Mathurin or drop a note in <code>#workspace</code>. The workspace — and especially <code>mfl-wiki</code> — only gets better if everyone contributes.</p>
+
+  <footer>
+    MFL Workspace · Internal team guide · April 2026 · <code>github.com/Metaverse-Football-League/mfl-workspace</code>
+  </footer>
+
+</div>
+</body>
+</html>
