@@ -4,7 +4,7 @@
 
 | Repo | Description | Access | Key Skills |
 |------|-------------|--------|------------|
-| **mfl-workspace** | Umbrella repo — shared context, setup, universal skills | All employees | `/commit`, `/project-create` |
+| **mfl-workspace** | Umbrella repo — shared context, setup, universal skills | All employees | `/commit`, `/pull`, `/project-create` |
 | **mfl-wiki** | Knowledge system — KB, memory, sources | All employees | `/wiki-ingest`, `/wiki-recap`, `/wiki-update`, `/source-import` |
 | **mfl-confidential** | Finance, legal, projections | Mathurin, Yann, CFO | — |
 | **mfl-creators** | Creator CRM — profiles, outreach, contracts, audits | Creator/marketing team | `/creator-digest`, `/creator-update`, `/creator-outreach`, `/creator-audit`, `/creator-contract`, `/creator-activate`, `/creator-discover`, `/creator-payments`, `/discord-read-dm`, `/email` |
