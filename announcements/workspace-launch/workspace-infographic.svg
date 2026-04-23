@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1700" width="1200" height="1700" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="100%" stop-color="#1a3860"/>
+    </linearGradient>
+    <linearGradient id="wikiGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00c46a"/>
+      <stop offset="100%" stop-color="#008f4e"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0b1f3a"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00c46a"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1200" height="1700" fill="#fafbfc"/>
+
+  <!-- ============ HERO ============ -->
+  <rect x="0" y="0" width="1200" height="240" fill="url(#heroGrad)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#00c46a"/>
+  <text x="60" y="90" font-size="16" font-weight="600" fill="#00c46a" letter-spacing="3">TEAM ANNOUNCEMENT · APRIL 2026</text>
+  <text x="60" y="160" font-size="64" font-weight="700" fill="#ffffff">MFL Workspace</text>
+  <text x="60" y="205" font-size="20" fill="#c9d3e0">One umbrella · seven repos · shared context · powered by Claude Code</text>
+  <text x="1140" y="205" text-anchor="end" font-size="13" fill="#00c46a" letter-spacing="2">REPLACES mfl-knowledge-base</text>
+
+  <!-- ============ SECTION 1: STRUCTURE ============ -->
+  <text x="60" y="310" font-size="26" font-weight="700" fill="#0b1f3a">1 · The Workspace at a Glance</text>
+  <rect x="60" y="322" width="60" height="4" fill="#00c46a"/>
+  <text x="60" y="352" font-size="14" fill="#5b6772">A flat set of independent Git repos, sharing one CLAUDE.md — auto-loaded by Claude Code.</text>
+
+  <!-- Central card: mfl-workspace -->
+  <rect x="400" y="390" width="400" height="90" rx="10" fill="#0b1f3a"/>
+  <rect x="400" y="390" width="400" height="90" rx="10" fill="none" stroke="#00c46a" stroke-width="2"/>
+  <text x="600" y="422" text-anchor="middle" font-size="13" font-weight="700" fill="#00c46a" letter-spacing="2">SHARED · UMBRELLA</text>
+  <text x="600" y="450" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">mfl-workspace</text>
+  <text x="600" y="470" text-anchor="middle" font-size="12" fill="#c9d3e0">CLAUDE.md · setup.sh · universal skills</text>
+
+  <!-- Connector lines from central card down to each repo -->
+  <g stroke="#b5c0cc" stroke-width="1.5" fill="none">
+    <!-- Vertical trunk -->
+    <line x1="600" y1="480" x2="600" y2="515"/>
+    <!-- Horizontal branch spanning row 1 -->
+    <line x1="225" y1="515" x2="975" y2="515"/>
+    <!-- Drops to row 1 cards -->
+    <line x1="225" y1="515" x2="225" y2="555"/>
+    <line x1="475" y1="515" x2="475" y2="555"/>
+    <line x1="725" y1="515" x2="725" y2="555"/>
+    <line x1="975" y1="515" x2="975" y2="555"/>
+  </g>
+
+  <!-- Row 1: 4 repos (mfl-wiki highlighted) -->
+  <!-- mfl-wiki (HIGHLIGHTED) -->
+  <rect x="115" y="555" width="220" height="100" rx="8" fill="url(#wikiGrad)"/>
+  <text x="225" y="585" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="2">KNOWLEDGE CORE</text>
+  <text x="225" y="612" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">mfl-wiki</text>
+  <text x="225" y="635" text-anchor="middle" font-size="11" fill="#e6f9ef">KB · sources · memory</text>
+
+  <!-- mfl-marketing -->
+  <rect x="365" y="555" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="365" y="555" width="6" height="100" rx="2" fill="#00c46a"/>
+  <text x="475" y="590" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-marketing</text>
+  <text x="475" y="614" text-anchor="middle" font-size="11" fill="#5b6772">Campaigns · promos</text>
+  <text x="475" y="632" text-anchor="middle" font-size="11" fill="#5b6772">acquisition · ads</text>
+
+  <!-- mfl-product -->
+  <rect x="615" y="555" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="615" y="555" width="6" height="100" rx="2" fill="#00c46a"/>
+  <text x="725" y="590" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-product</text>
+  <text x="725" y="614" text-anchor="middle" font-size="11" fill="#5b6772">Features · discovery</text>
+  <text x="725" y="632" text-anchor="middle" font-size="11" fill="#5b6772">UX · research</text>
+
+  <!-- mfl-tech -->
+  <rect x="865" y="555" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="865" y="555" width="6" height="100" rx="2" fill="#00c46a"/>
+  <text x="975" y="590" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-tech</text>
+  <text x="975" y="614" text-anchor="middle" font-size="11" fill="#5b6772">Migrations · infra</text>
+  <text x="975" y="632" text-anchor="middle" font-size="11" fill="#5b6772">integrations</text>
+
+  <!-- Row 2: 3 repos -->
+  <!-- Connectors row 2 -->
+  <g stroke="#b5c0cc" stroke-width="1.5" fill="none">
+    <line x1="600" y1="480" x2="600" y2="500"/>
+    <line x1="350" y1="680" x2="850" y2="680"/>
+    <line x1="350" y1="680" x2="350" y2="705"/>
+    <line x1="600" y1="680" x2="600" y2="705"/>
+    <line x1="850" y1="680" x2="850" y2="705"/>
+    <line x1="600" y1="500" x2="600" y2="515"/>
+  </g>
+  <!-- Vertical tie from row1 trunk to row 2 trunk -->
+  <line x1="600" y1="655" x2="600" y2="680" stroke="#b5c0cc" stroke-width="1.5"/>
+
+  <!-- mfl-data -->
+  <rect x="240" y="705" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="240" y="705" width="6" height="100" rx="2" fill="#00c46a"/>
+  <text x="350" y="740" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-data</text>
+  <text x="350" y="764" text-anchor="middle" font-size="11" fill="#5b6772">Analytics · cohorts</text>
+  <text x="350" y="782" text-anchor="middle" font-size="11" fill="#5b6772">KPIs · dashboards</text>
+
+  <!-- mfl-creators -->
+  <rect x="490" y="705" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="490" y="705" width="6" height="100" rx="2" fill="#00c46a"/>
+  <text x="600" y="740" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-creators</text>
+  <text x="600" y="764" text-anchor="middle" font-size="11" fill="#5b6772">Creator CRM · outreach</text>
+  <text x="600" y="782" text-anchor="middle" font-size="11" fill="#5b6772">contracts · audits</text>
+
+  <!-- mfl-confidential -->
+  <rect x="740" y="705" width="220" height="100" rx="8" fill="#ffffff" stroke="#e2e6ea" stroke-width="1.5"/>
+  <rect x="740" y="705" width="6" height="100" rx="2" fill="#e6a700"/>
+  <text x="850" y="740" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1f3a">mfl-confidential</text>
+  <text x="850" y="764" text-anchor="middle" font-size="11" fill="#5b6772">Finance · legal</text>
+  <text x="850" y="782" text-anchor="middle" font-size="11" font-weight="600" fill="#e6a700">RESTRICTED</text>
+
+  <!-- ============ SECTION 2: INSIDE mfl-wiki ============ -->
+  <text x="60" y="890" font-size="26" font-weight="700" fill="#0b1f3a">2 · Inside mfl-wiki</text>
+  <rect x="60" y="902" width="60" height="4" fill="#00c46a"/>
+  <text x="60" y="932" font-size="14" fill="#5b6772">Our knowledge system has three layers — and four skills to keep it fed and clean.</text>
+
+  <!-- 3 layer cards -->
+  <!-- knowledge-base -->
+  <rect x="60" y="970" width="360" height="170" rx="10" fill="#ffffff" stroke="#00c46a" stroke-width="2"/>
+  <rect x="60" y="970" width="360" height="40" rx="10" fill="#00c46a"/>
+  <rect x="60" y="1000" width="360" height="10" fill="#00c46a"/>
+  <text x="240" y="997" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">knowledge-base/</text>
+  <text x="85" y="1045" font-size="13" font-weight="700" fill="#0b1f3a">Canonical · curated</text>
+  <text x="85" y="1072" font-size="12" fill="#5b6772">Trusted reference pages organized</text>
+  <text x="85" y="1090" font-size="12" fill="#5b6772">by domain (e.g. 09-marketing/).</text>
+  <text x="85" y="1115" font-size="12" fill="#5b6772">Numbered folders keep ordering</text>
+  <text x="85" y="1133" font-size="12" fill="#5b6772">stable across the company.</text>
+
+  <!-- sources -->
+  <rect x="440" y="970" width="320" height="170" rx="10" fill="#ffffff" stroke="#0b1f3a" stroke-width="2"/>
+  <rect x="440" y="970" width="320" height="40" rx="10" fill="#0b1f3a"/>
+  <rect x="440" y="1000" width="320" height="10" fill="#0b1f3a"/>
+  <text x="600" y="997" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">sources/</text>
+  <text x="465" y="1045" font-size="13" font-weight="700" fill="#0b1f3a">Raw · unedited</text>
+  <text x="465" y="1072" font-size="12" fill="#5b6772">Imported material: transcripts,</text>
+  <text x="465" y="1090" font-size="12" fill="#5b6772">articles, decks, internal docs.</text>
+  <text x="465" y="1115" font-size="12" fill="#5b6772">Timestamped &amp; attributed.</text>
+  <text x="465" y="1133" font-size="12" fill="#5b6772">Never the direct answer.</text>
+
+  <!-- memory -->
+  <rect x="780" y="970" width="360" height="170" rx="10" fill="#ffffff" stroke="#5b6772" stroke-width="2"/>
+  <rect x="780" y="970" width="360" height="40" rx="10" fill="#5b6772"/>
+  <rect x="780" y="1000" width="360" height="10" fill="#5b6772"/>
+  <text x="960" y="997" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">memory/</text>
+  <text x="805" y="1045" font-size="13" font-weight="700" fill="#0b1f3a">Long-term · agent</text>
+  <text x="805" y="1072" font-size="12" fill="#5b6772">Stable facts, team preferences,</text>
+  <text x="805" y="1090" font-size="12" fill="#5b6772">context agents carry across</text>
+  <text x="805" y="1115" font-size="12" fill="#5b6772">sessions. Lean, durable,</text>
+  <text x="805" y="1133" font-size="12" fill="#5b6772">regularly pruned.</text>
+
+  <!-- FEEDING FLOW -->
+  <text x="60" y="1220" font-size="18" font-weight="700" fill="#0b1f3a">How the wiki is fed</text>
+  <rect x="60" y="1228" width="40" height="3" fill="#00c46a"/>
+
+  <!-- Flow row: /source-import → sources → /wiki-ingest → knowledge-base → /wiki-update -->
+  <!-- Box 1: /source-import -->
+  <rect x="60" y="1260" width="200" height="80" rx="8" fill="#0b1f3a"/>
+  <text x="160" y="1290" text-anchor="middle" font-size="13" font-weight="700" fill="#00c46a">STEP 1</text>
+  <text x="160" y="1314" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">/source-import</text>
+  <text x="160" y="1332" text-anchor="middle" font-size="11" fill="#c9d3e0">pull raw material in</text>
+
+  <!-- Arrow -->
+  <line x1="265" y1="1300" x2="305" y2="1300" stroke="#0b1f3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: /wiki-ingest -->
+  <rect x="315" y="1260" width="200" height="80" rx="8" fill="#0b1f3a"/>
+  <text x="415" y="1290" text-anchor="middle" font-size="13" font-weight="700" fill="#00c46a">STEP 2</text>
+  <text x="415" y="1314" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">/wiki-ingest</text>
+  <text x="415" y="1332" text-anchor="middle" font-size="11" fill="#c9d3e0">curate into the KB</text>
+
+  <!-- Arrow -->
+  <line x1="520" y1="1300" x2="560" y2="1300" stroke="#0b1f3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: /wiki-update -->
+  <rect x="570" y="1260" width="200" height="80" rx="8" fill="#0b1f3a"/>
+  <text x="670" y="1290" text-anchor="middle" font-size="13" font-weight="700" fill="#00c46a">STEP 3</text>
+  <text x="670" y="1314" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">/wiki-update</text>
+  <text x="670" y="1332" text-anchor="middle" font-size="11" fill="#c9d3e0">evolve KB pages</text>
+
+  <!-- Plus box: /wiki-recap -->
+  <rect x="820" y="1260" width="320" height="80" rx="8" fill="#ffffff" stroke="#00c46a" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="980" y="1290" text-anchor="middle" font-size="13" font-weight="700" fill="#00c46a">BONUS</text>
+  <text x="980" y="1314" text-anchor="middle" font-size="15" font-weight="700" fill="#0b1f3a">/wiki-recap</text>
+  <text x="980" y="1332" text-anchor="middle" font-size="11" fill="#5b6772">digest of recent changes</text>
+
+  <!-- ============ SECTION 3: GET STARTED ============ -->
+  <text x="60" y="1430" font-size="26" font-weight="700" fill="#0b1f3a">3 · Get Started in Three Commands</text>
+  <rect x="60" y="1442" width="60" height="4" fill="#00c46a"/>
+
+  <rect x="60" y="1470" width="1080" height="140" rx="10" fill="#0b1f3a"/>
+  <text x="85" y="1505" font-family="'SF Mono', Menlo, Consolas, monospace" font-size="14" fill="#e6f9ef">$ git clone https://github.com/Metaverse-Football-League/mfl-workspace.git ~/mfl-workspace</text>
+  <text x="85" y="1535" font-family="'SF Mono', Menlo, Consolas, monospace" font-size="14" fill="#e6f9ef">$ cd ~/mfl-workspace &amp;&amp; ./setup.sh</text>
+  <text x="85" y="1575" font-family="'SF Mono', Menlo, Consolas, monospace" font-size="14" fill="#00c46a">$ cd mfl-marketing &amp;&amp; claude    # shared + domain context auto-loaded</text>
+
+  <!-- ============ FOOTER ============ -->
+  <rect x="0" y="1640" width="1200" height="60" fill="#0b1f3a"/>
+  <text x="60" y="1676" font-size="12" fill="#c9d3e0">MFL Workspace · Internal · April 2026</text>
+  <text x="1140" y="1676" text-anchor="end" font-size="12" fill="#00c46a">Accuracy first · English only · Football over crypto</text>
+
+</svg>
